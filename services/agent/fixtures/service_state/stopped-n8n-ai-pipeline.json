@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-23T12:10:00Z",
+  "service_role": "n8n_ai_pipeline",
+  "service_name": "n8n_ai_pipeline",
+  "management_type": "docker_compose",
+  "observed_state": "stopped",
+  "enabled_state": "enabled",
+  "health_summary": "stopped",
+  "source_interface": "docker_metadata_proxy",
+  "evidence_timestamp": "2026-08-23T12:10:00Z",
+  "collection_status": "success"
+}

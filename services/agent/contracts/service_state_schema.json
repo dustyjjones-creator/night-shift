@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Night Shift Service State Metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "service_role", "service_name", "management_type", "observed_state", "enabled_state", "health_summary", "source_interface", "evidence_timestamp", "collection_status"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "service_role": {"enum": ["ollama", "ai_server_log_forwarder", "n8n_ai_pipeline"]},
+    "service_name": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{0,63}$"},
+    "management_type": {"enum": ["systemd", "docker_compose"]},
+    "observed_state": {"enum": ["healthy", "degraded", "stopped", "unknown", "unavailable"]},
+    "enabled_state": {"enum": ["enabled", "disabled", "unknown", "unavailable"]},
+    "health_summary": {"enum": ["healthy", "degraded", "stopped", "unknown", "unavailable"]},
+    "restart_count": {"type": "integer", "minimum": 0, "maximum": 9999},
+    "last_state_change": {"type": "string", "format": "date-time"},
+    "source_interface": {"enum": ["systemd_metadata_proxy", "docker_metadata_proxy", "unavailable"]},
+    "evidence_timestamp": {"type": "string", "format": "date-time"},
+    "collection_status": {"enum": ["success", "partial", "unavailable"]},
+    "reason_unavailable": {"type": "string", "maxLength": 160}
+  }
+}

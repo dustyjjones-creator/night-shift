@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-23T12:00:00Z",
+  "service_role": "ollama",
+  "service_name": "ollama",
+  "management_type": "systemd",
+  "observed_state": "healthy",
+  "enabled_state": "enabled",
+  "health_summary": "healthy",
+  "restart_count": 0,
+  "last_state_change": "2026-08-23T10:00:00Z",
+  "source_interface": "systemd_metadata_proxy",
+  "evidence_timestamp": "2026-08-23T12:00:00Z",
+  "collection_status": "success"
+}

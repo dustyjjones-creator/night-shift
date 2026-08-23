@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-23T12:05:00Z",
+  "service_role": "ai_server_log_forwarder",
+  "service_name": "ai_server_log_forwarder",
+  "management_type": "systemd",
+  "observed_state": "degraded",
+  "enabled_state": "enabled",
+  "health_summary": "degraded",
+  "restart_count": 3,
+  "last_state_change": "2026-08-23T11:45:00Z",
+  "source_interface": "systemd_metadata_proxy",
+  "evidence_timestamp": "2026-08-23T12:05:00Z",
+  "collection_status": "partial"
+}
