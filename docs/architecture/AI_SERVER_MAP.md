@@ -25,7 +25,7 @@ Proxmox Host
     └── Night Shift
         ├── Git repository
         ├── GitHub remote
-        └── Future agent control and audit system
+        └── Read-only agent control and audit system
 Host
 Component	Current State
 Hostname	ai-server
@@ -99,11 +99,43 @@ Structured action logging
 Change tracking through Git
 Splunk observability for agent activity
 Daily handoffs and workflow summaries
+
+Agent Safety and Audit Controls
+
+Night Shift includes a read-only agent inspection boundary at
+services/agent/bin/run-agent-command.py. The wrapper accepts only an explicit
+set of inspection commands and applies per-command argument validation rather
+than trusting an executable name alone. Unrecognized commands, unsafe options,
+and mutation-capable forms are rejected and recorded as blocked receipts.
+
+The wrapper resolves its working directory and accepted filesystem operands
+against /home/dusty/night-shift. It rejects paths outside the project root,
+including parent traversal and symlink escapes. Commands with filesystem
+operands are therefore restricted to the repository boundary.
+
+The policy permits constrained inspection forms for project files, Git,
+Docker, systemd, and journal logs. It blocks known unsafe patterns, including
+find deletion or command-execution actions, in-place or write-capable sed
+forms, Git branch or remote mutation, ripgrep preprocessors, and journal
+maintenance options. journalctl is limited to explicitly allowed read-only
+inspection options.
+
+Every command attempt produces structured JSONL receipts in the agent runtime
+log. A started receipt is linked to its completion receipt by parent_id; blocked
+attempts receive a blocked receipt. Receipts include session and action context,
+the command and working directory, result metadata, timing, captured output,
+and repository Git state.
+
+Sensitive values are redacted before audit receipts are written. Redaction
+covers common credential-bearing fields and token formats, and recursively
+handles JSON-like receipt values. Policy and redaction behavior are covered by
+automated regression tests in services/agent/tests/test-policy.py and
+services/agent/tests/test-redaction.py.
+
 Known Future Work
 Export and version-control n8n workflow definitions safely.
 Bring forwarder source code into the Night Shift repository.
 Document systemd service definitions without exposing secrets.
 Add infrastructure change logging.
-Build a read-only agent inspection mode.
 Add controlled editing and testing.
 Generate daily handoffs from actual agent action logs.
