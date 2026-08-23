@@ -9,6 +9,7 @@
 *.pfx
 secrets/
 credentials/
+services/agent/workspace/*
 
 # Logs and runtime data
 *.log
