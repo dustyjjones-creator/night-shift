@@ -1,0 +1,27 @@
+id: finding-splunk-authentication-context-001
+timestamp: "2026-08-23T00:00:00Z"
+source: splunk
+source_reference: source-splunk-authentication-trend-example-001
+category: detection
+title: Failed-login volume alone is not an incident conclusion
+summary: >
+  Authentication-failure signals become more meaningful when they are
+  correlated with successful logins, concentration, and known environmental
+  changes instead of being judged by a single threshold.
+why_it_matters: >
+  Context reduces alert fatigue while preserving the ability to recognize
+  unusual access patterns that warrant investigation.
+educational_value: >
+  Demonstrates the difference between an event count, a detection hypothesis,
+  and an evidence-backed investigation.
+technical_concepts:
+  - detection_engineering
+  - signal_to_noise
+  - authentication_telemetry
+  - hypothesis_testing
+sanitization_status: sanitized_example
+sensitivity: review_required
+suggested_content_angle: >
+  Explain why defenders should ask a second question after a threshold fires:
+  what changed, and what supporting evidence would confirm the risk?
+status: pending

@@ -1,0 +1,28 @@
+id: candidate-detection-context-001
+finding_references:
+  - finding-splunk-authentication-context-001
+content_type: educational
+working_title: A detection threshold is the beginning of the investigation
+proposed_hook: >
+  Ten failed logins may be noise, a misconfigured client, or the first clue of
+  an access problem. The count alone cannot tell you which.
+draft: >
+  A useful detection does more than cross a threshold: it creates a testable
+  question. For authentication failures, I would compare the failure pattern
+  with successful logins, whether activity is concentrated, and whether a known
+  change explains it. That turns a noisy count into an investigation path. The
+  lesson is not to ignore thresholds; it is to design the context that lets a
+  responder decide what the threshold means.
+target_educational_value: >
+  Teach the distinction between telemetry, a detection hypothesis, and a
+  validated security conclusion.
+audience: security-practitioners
+confidence: 0.84
+originality: 0.75
+educational_value: 0.93
+timeliness: 0.70
+overall_score: 0.83
+ranking_rationale: >
+  Broadly useful cybersecurity explainer grounded in a sanitized detection
+  scenario rather than generic monitoring advice.
+recommended_status: pending_human_review

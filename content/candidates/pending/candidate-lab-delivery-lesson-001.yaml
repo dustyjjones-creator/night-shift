@@ -1,0 +1,27 @@
+id: candidate-lab-delivery-lesson-001
+finding_references:
+  - finding-lab-log-delivery-001
+content_type: lab_finding
+working_title: The tiny log-forwarding choice that protects your evidence
+proposed_hook: >
+  A log pipeline can look healthy while quietly losing the exact event you need
+  later. The important question is when it advances its cursor.
+draft: >
+  In my lab design, the forwarder treats downstream acknowledgement as the
+  point of progress. If delivery fails, it retries from the same position
+  instead of skipping ahead. That small rule is an introduction to at-least-once
+  delivery: reliability is not only about moving data, but about knowing which
+  data was safely received. The tradeoff is that downstream systems must tolerate
+  duplicates, but that is usually safer than invisible gaps in security evidence.
+target_educational_value: >
+  Make delivery semantics concrete through an observable lab design decision.
+audience: security-practitioners
+confidence: 0.88
+originality: 0.82
+educational_value: 0.91
+timeliness: 0.66
+overall_score: 0.84
+ranking_rationale: >
+  Strong hands-on lesson with a clear practical takeaway and no need for
+  sensitive operational detail.
+recommended_status: pending_human_review

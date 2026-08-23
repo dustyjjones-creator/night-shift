@@ -1,0 +1,26 @@
+id: candidate-advisory-triage-001
+finding_references:
+  - finding-news-advisory-triage-001
+content_type: news_connection
+working_title: Reading an advisory is not the same as prioritizing it
+proposed_hook: >
+  A high severity score should start a triage conversation, not end it.
+draft: >
+  When a cybersecurity advisory arrives, I use it to ask four local questions:
+  Is the affected technology present? Is it exposed? Is exploitation plausible?
+  Do we have a compensating control or a detection signal? This approach does
+  not replace severity scoring; it turns a public advisory into an evidence-led
+  decision. For learners, the key habit is to connect external news with the
+  systems and telemetry they can actually validate.
+target_educational_value: >
+  Provide a repeatable, threat-informed framework for vulnerability triage.
+audience: general-technical
+confidence: 0.80
+originality: 0.78
+educational_value: 0.87
+timeliness: 0.85
+overall_score: 0.82
+ranking_rationale: >
+  Timely current-events connection that remains useful without relying on a
+  particular vendor, vulnerability, or live advisory.
+recommended_status: pending_human_review

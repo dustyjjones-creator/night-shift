@@ -1,0 +1,28 @@
+id: finding-lab-log-delivery-001
+timestamp: "2026-08-23T00:00:00Z"
+source: lab_notes
+source_reference: source-lab-log-delivery-example-001
+category: lab_milestone
+title: A forwarder cursor is a reliability control, not just a convenience
+summary: >
+  A reliable forwarding workflow advances its position only after downstream
+  acknowledgement, so transient delivery failures are retried rather than
+  becoming silent data gaps.
+why_it_matters: >
+  Observability is only useful when the data path makes loss visible and
+  recoverable. Acknowledgement-aware state protects the evidence needed for
+  troubleshooting and detection.
+educational_value: >
+  Explains at-least-once delivery, idempotent downstream handling, and why
+  offset management belongs in an observability design.
+technical_concepts:
+  - at_least_once_delivery
+  - acknowledgement
+  - cursor_management
+  - observability
+sanitization_status: sanitized_example
+sensitivity: review_required
+suggested_content_angle: >
+  Show how a small reliability decision in a homelab log pipeline teaches the
+  same delivery guarantees used in production systems.
+status: pending

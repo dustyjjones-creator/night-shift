@@ -1,0 +1,27 @@
+id: finding-news-advisory-triage-001
+timestamp: "2026-08-23T00:00:00Z"
+source: cyber_news
+source_reference: source-news-advisory-triage-example-001
+category: advisory
+title: Vulnerability priority is a local risk decision
+summary: >
+  Advisory severity is an important input, but a practical response also weighs
+  exploitability, asset exposure, compensating controls, and available
+  detection evidence.
+why_it_matters: >
+  Teams with limited time need a repeatable way to turn public vulnerability
+  information into an actionable, environment-specific priority.
+educational_value: >
+  Connects common vulnerability scoring with threat-informed prioritization and
+  evidence-based remediation planning.
+technical_concepts:
+  - vulnerability_management
+  - threat_modeling
+  - exposure_management
+  - detection_coverage
+sanitization_status: sanitized_example
+sensitivity: review_required
+suggested_content_angle: >
+  Offer a compact triage checklist that helps learners move from reading an
+  advisory to deciding what to validate first.
+status: pending

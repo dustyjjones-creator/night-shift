@@ -1,0 +1,16 @@
+id: source-lab-log-delivery-example-001
+source_category: lab_notes
+collection_mode: manual_sanitized_example
+live_collected: false
+title: Delivery acknowledgement is part of reliable log forwarding
+summary: >
+  Illustrative lab note: a log-forwarding design records its read position only
+  after the receiving system acknowledges successful delivery. This avoids
+  silently skipping events when a downstream service is unavailable.
+sanitization_status: sanitized_example
+restricted_information_removed:
+  - hostnames
+  - service endpoints
+  - credentials
+  - event payloads
+content_use: review_required

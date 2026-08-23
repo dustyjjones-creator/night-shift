@@ -1,0 +1,17 @@
+id: source-splunk-authentication-trend-example-001
+source_category: splunk
+collection_mode: manual_sanitized_example
+live_collected: false
+title: Authentication failures need context before escalation
+summary: >
+  Illustrative saved-search summary: a short increase in failed authentication
+  events should be compared with successful logins, source concentration, and
+  expected maintenance activity before it becomes an incident narrative.
+sanitization_status: sanitized_example
+restricted_information_removed:
+  - search syntax
+  - index names
+  - host identifiers
+  - account identifiers
+  - timestamps and counts
+content_use: review_required

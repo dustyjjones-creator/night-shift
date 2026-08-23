@@ -1,0 +1,16 @@
+id: source-news-advisory-triage-example-001
+source_category: cyber_news
+collection_mode: manual_sanitized_example
+live_collected: false
+title: Advisory triage should combine exploitability and local exposure
+summary: >
+  Illustrative advisory scenario: a published vulnerability becomes more useful
+  as an educational example when severity is evaluated alongside active
+  exploitation, local exposure, compensating controls, and detection coverage.
+sanitization_status: sanitized_example
+restricted_information_removed:
+  - vendor names
+  - product names
+  - advisory identifiers
+  - URLs
+content_use: review_required
